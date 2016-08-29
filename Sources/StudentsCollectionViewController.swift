@@ -34,7 +34,7 @@ class StudentsCollectionViewController: UICollectionViewController {
 		let imageExtensions = ["png", "jpg", "jpeg"]
 		var imageURLs = [NSURL]()
 		for ext in imageExtensions {
-			if let urls = NSBundle.mainBundle().URLsForResourcesWithExtension(ext, subdirectory: nil) {
+			if let urls = NSBundle.mainBundle().URLsForResourcesWithExtension(ext, subdirectory: "StudentImages") {
 				imageURLs.appendContentsOf(urls)
 			}
 		}

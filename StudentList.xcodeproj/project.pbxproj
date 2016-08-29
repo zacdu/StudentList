@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D3B37D11D74850800187CA9 /* StudentImages in Resources */ = {isa = PBXBuildFile; fileRef = 9D3B37D01D74850800187CA9 /* StudentImages */; };
 		9DFE1BC01D26D55A00F80375 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DFE1BB71D26D55A00F80375 /* Assets.xcassets */; };
 		9DFE1BC11D26D55A00F80375 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DFE1BB81D26D55A00F80375 /* LaunchScreen.storyboard */; };
 		9DFE1BC21D26D55A00F80375 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DFE1BBA1D26D55A00F80375 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9D3B37D01D74850800187CA9 /* StudentImages */ = {isa = PBXFileReference; lastKnownFileType = folder; path = StudentImages; sourceTree = "<group>"; };
 		9DFE1BA11D26D51600F80375 /* StudentList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudentList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DFE1BB71D26D55A00F80375 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9DFE1BB91D26D55A00F80375 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -57,7 +59,7 @@
 		9DFE1BB61D26D55A00F80375 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				9DFE1BCC1D26DCAB00F80375 /* StudentImages */,
+				9D3B37D01D74850800187CA9 /* StudentImages */,
 				9DFE1BC61D26D77B00F80375 /* Storyboards */,
 				9DFE1BB71D26D55A00F80375 /* Assets.xcassets */,
 				9DFE1BBC1D26D55A00F80375 /* Info.plist */,
@@ -82,13 +84,6 @@
 				9DFE1BB81D26D55A00F80375 /* LaunchScreen.storyboard */,
 			);
 			name = Storyboards;
-			sourceTree = "<group>";
-		};
-		9DFE1BCC1D26DCAB00F80375 /* StudentImages */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = StudentImages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +146,7 @@
 			files = (
 				9DFE1BC21D26D55A00F80375 /* Main.storyboard in Resources */,
 				9DFE1BC01D26D55A00F80375 /* Assets.xcassets in Resources */,
+				9D3B37D11D74850800187CA9 /* StudentImages in Resources */,
 				9DFE1BC11D26D55A00F80375 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,6 +312,7 @@
 				9DFE1BB51D26D51600F80375 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
