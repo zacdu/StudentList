@@ -30,35 +30,35 @@ class StudentsCollectionViewController: UICollectionViewController {
 	
 	// MARK: Private Methods
 	
-	private func loadImages() {
+	fileprivate func loadImages() {
 		let imageExtensions = ["png", "jpg", "jpeg"]
-		var imageURLs = [NSURL]()
+		var imageURLs = [URL]()
 		for ext in imageExtensions {
-			if let urls = NSBundle.mainBundle().URLsForResourcesWithExtension(ext, subdirectory: "StudentImages") {
-				imageURLs.appendContentsOf(urls)
+			if let urls = Bundle.main.urls(forResourcesWithExtension: ext, subdirectory: "StudentImages") {
+				imageURLs.append(contentsOf: urls)
 			}
 		}
 		
 		images = imageURLs.flatMap { (url) -> StudentImage? in
-			guard let imageData = NSData(contentsOfURL: url),
-			image = UIImage(data: imageData) else { return nil }
-			let name = url.URLByDeletingPathExtension?.lastPathComponent ?? ""
+			guard let imageData = try? Data(contentsOf: url),
+			let image = UIImage(data: imageData) else { return nil }
+			let name = url.deletingPathExtension().lastPathComponent ?? ""
 			return StudentImage(image: image, name: name)
 		}
 	}
 	
 	// MARK: UICollectionViewDataSource
 	
-	override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+	override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 		return images.count
 	}
 	
-	override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-		guard let cell = collectionView.dequeueReusableCellWithReuseIdentifier("StudentCell", forIndexPath: indexPath) as? StudentCell else {
+	override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+		guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StudentCell", for: indexPath) as? StudentCell else {
 			return UICollectionViewCell()
 		}
 		
-		let studentImage = images[indexPath.row]
+		let studentImage = images[(indexPath as NSIndexPath).row]
 		cell.imageView.image = studentImage.image
 		cell.nameLabel.text = studentImage.name
 		
@@ -69,7 +69,7 @@ class StudentsCollectionViewController: UICollectionViewController {
 	
 	// MARK: Private Properties
 	
-	private var images = [StudentImage]() {
+	fileprivate var images = [StudentImage]() {
 		didSet {
 			collectionView?.reloadData()
 		}
